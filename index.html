@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>IP Subnet Kalkulator | Ferry</title>
+
+<head>
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.iptp.net/wp-includes/css/classic-themes.min.css?ver=6.2.4'  media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient (135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='wcjp-frontend.css-css' href='https://www.iptp.net/wp-content/plugins/custom-css-js-php/assets/css/wcjp-frontend.css?ver=6.2.4'  media='all' />
+<link rel='stylesheet' id='mltlngg_stylesheet-css' href='https://www.iptp.net/wp-content/plugins/multilanguage/css/style.css?ver=1.3.3'  media='all' />
+<link rel='stylesheet' id='posts-from-category-widget-stylesheet-css' href='https://www.iptp.net/wp-content/plugins/posts-in-category-widget/style.css?ver=1.2.0'  media='all' />
+<link rel='stylesheet' id='cssnews-css' href='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/css/stylenews.css?ver=4.1.4'  media='all' />
+<link rel='stylesheet' id='widgets-on-pages-css' href='https://www.iptp.net/wp-content/plugins/widgets-on-pages/public/css/widgets-on-pages-public.css?ver=1.4.0'  media='all' />
+<link rel='stylesheet' id='intlTelInput.css-css' href='https://www.iptp.net/wp-content/themes/iptp-theme/lib/intl-tel-input/css/intlTelInput.css?ver=6.2.4'  media='all' />
+<link rel='stylesheet' id='swiper.min.css-css' href='https://www.iptp.net/wp-content/themes/iptp-theme/lib/swiper/swiper-bundle.min.css?ver=6.2.4'  media='all' />
+<link rel='stylesheet' id='css-style2-css' href='https://www.iptp.net/wp-content/themes/iptp-theme/css/style.css?ver=5175987'  media='all' />
+<script type='text/javascript' id='jquery-core-js-extra'>
+/* <![CDATA[ */
+var benevolent_data = {"auto":"1","loop":"1","pager":"1","animation":"slide","speed":"7000","a_speed":"600","rtl":"","is_localhost":"","is_mobile":"","admin_ajax":"https:\/\/www.iptp.net\/en_US\/admin-ajax\/","utils":"https:\/\/www.iptp.net\/wp-content\/themes\/iptp-theme\/lib\/intl-tel-input\/js\/utils.js","post_id":"280","link_op_rf_choose_page":"https:\/\/www.iptp.net\/en_US\/thank-you\/","link_op_rf_choose_page_tks":"https:\/\/www.iptp.net\/en_US\/event-thank-you\/","link_op_lp_ip_calculator_new_thanks":"https:\/\/www.iptp.net\/en_US\/request-form-thank-you\/","link_op_lp_all_form_new_form":"https:\/\/www.iptp.net\/en_US\/request-a-quote\/","link_op_lp_all_form_new_thanks":"https:\/\/www.iptp.net\/en_US\/thank-you-request-a-quote\/","domain":"\/\/www.iptp.net","is_web_dev":"","warehouse":"Warehouse","phone":"Phone Number *","error_captcha":"The captcha code is incorrect","openla":"","test_api":"","step":"Step"};
+/* ]]> */
+</script>
+<script  src='https://www.iptp.net/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script  src='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/js/jquery.newstape.js?ver=4.1.4' id='vnewsticker-js'></script>
+<script  src='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/js/sp-news-public.js?ver=4.1.4' id='sp-news-public-js'></script>
+
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"admin"};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TFPQ38T');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->    
+        <!-- <script type="text/javascript">             
+          var ajax_url_load = "/var/www/site/wp-content/themes/iptp-theme/inc/load_ajax.php";               
+        </script> -->
+    
+        <style type="text/css">
+        body nav li[id*="ru_RU"]{ display:none; }
+    </style>
+
+    <script>
+
+    jQuery(document).ready(function($) {
+
+      // if ( window.localStorage.getItem('where_ip')  ) {
+
+      //     if ( window.localStorage.getItem('where_ip') != "RU" ){
+      //       // $('nav li[id*="ru_RU"]').css('display','none !important');
+      //       $('body').append(`<style>nav li[id*="ru_RU"]{display:none!important}</style>`);
+
+      //       return;
+
+      //     }  else {
+
+      //        $('body').append(`<style>nav li[id*="ru_RU"]{display:block!important}</style>`);
+
+      //       return;
+      //     }
+
+      // }
+
+      $.ajax({ 
+         type: "get",
+        dataType: "json",
+        url: benevolent_data.admin_ajax,
+        data: {
+
+            action:"check_ip_ru",
+            test_api: "",
+        },
+
+
+        success: function(data) {
+          // Обработка успешного ответа
+         //    console.log( 'data: ' + data.page );
+
+          if (data.page != "RU" ) {
+            // Если результат "RU", добавляем элемент в список
+            $('body').append(`<style>nav li[id*="ru_RU"]{display:none!important}</style>`);
+            $('body').append(`<style>.submenu-lang li[id*="ru_RU"]{display:none!important}</style>`);
+
+        //    localStorage.setItem('where_ip', "NO" ); 
+
+          } else {
+
+             $('body').append(`<style>nav li[id*="ru_RU"]{display:block!important}</style>`);
+             $('body').append(`<style>.submenu-lang li[id*="ru_RU"]{display:block!important}</style>`);
+
+          //  localStorage.setItem('where_ip', "RU" ); 
+
+          }
+
+        },
+        error: function(xhr, status, error) {
+          // Обработка ошибок
+          console.error("Error making API request:", error);
+        }
+      });
+
+
+    });
+
+
+
+    </script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDRR307GWW"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HDRR307GWW');
+      </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+
+<body>                                              
+    </header><!-- #header -->
+    <div class="overlay d-none"></div>
+
+    <div class="content">
+<script type="text/javascript">            
+   var ajax_url_load_v4 = "https://www.iptp.net/en_US/page-load-ajax-v4"; 
+</script>
+
+<div class="section">
+   <div class="inner" style="padding-bottom: 20px;">
+    <br>
+    <br>
+    <br>
+
+      <h1 class="h__hero text-center">IP Subnet Kalkulator</h1>
+
+      <h2 class="h__hero text-center">
+        Alat Kalkulator Subnet IP menghitung nilai jaringan. Ia menggunakan kelas jaringan, alamat IP, dan subnet mask untuk menghitung dan mengembalikan daftar data mengenai subnet IPv4
+      <div class="ip-subnet-container">   
+         <section>
+            <ul class="nav nav-tabs nav-tabs-ip-subnet" id="pills-tab" role="tablist">
+               <li class="nav-item mb-0" role="presentation">
+                  <button class="nav-link active px-5 showDivButton" id="pills-home-tab" data-bs-toggle="pill" data-target="ipv4-sec2 ipv4-sec3 ipc-v4-show" data-bs-target="#pills-ipv4" type="button" role="tab" aria-controls="pills-ipv4" aria-selected="true">IPV4</button>
+               </li>
+            </ul>
+            <div class="tab-content tab-content-ip-subnet col-xl-12 mb-3" id="pills-tabContent">
+               <div class="tab-pane fade show active" id="pills-ipv4" role="tabpanel" aria-labelledby="pills-ipv4-tab" tabindex="0">
+                  <div class="p-3 px-lg-5 py-4">
+                     <form id="form-ip" class="" method="get">
+                        <div class="row gy-4">
+                           <div class="col-12 col-lg-3">
+                              <div class="d-block fw-medium mb-2 mb-lg-4">Network class</div>
+                              <div class="d-flex">
+                                 <div class="form-check pe-4">
+                                    <input class="form-check-input" type="radio" value="a" checked name="cclass" id="classA">
+                                    <label class="form-check-label" for="classA">
+                                    A
+                                    </label>
+                                 </div>
+                                 <div class="form-check pe-4">
+                                    <input class="form-check-input" type="radio" value="b" name="cclass" id="classB">
+                                    <label class="form-check-label" for="classB">
+                                    B
+                                    </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="c" name="cclass" id="classC">
+                                    <label class="form-check-label" for="classC">
+                                    C
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-lg-9">
+                              <div class="row gy-4">
+                                 <div class="col-12 col-lg-6">
+                                    <div class="d-block fw-medium mb-2">Subnet</div>
+                                    <div class="subnet-0 subnet-2">
+                                       <select id="csubnet" class="form-select" name="csubnet2" onchange="">
+                                          <option value="32">255.255.255.255 /32</option>
+                                          <option value="31">255.255.255.254 /31</option>
+                                          <option value="30">255.255.255.252 /30</option>
+                                          <option value="29">255.255.255.248 /29</option>
+                                          <option value="28">255.255.255.240 /28</option>
+                                          <option value="27">255.255.255.224 /27</option>
+                                          <option value="26">255.255.255.192 /26</option>
+                                          <option value="25">255.255.255.128 /25</option>
+                                          <option value="24">255.255.255.0 /24</option>
+                                          <option value="23">255.255.254.0 /23</option>
+                                          <option value="22">255.255.252.0 /22</option>
+                                          <option value="21">255.255.248.0 /21</option>
+                                          <option value="20">255.255.240.0 /20</option>
+                                          <option value="19">255.255.224.0 /19</option>
+                                          <option value="18">255.255.192.0 /18</option>
+                                          <option value="17">255.255.128.0 /17</option>
+                                          <option value="16">255.255.0.0 /16</option>
+                                          <option value="15">255.254.0.0 /15</option>
+                                          <option value="14">255.252.0.0 /14</option>
+                                          <option value="13">255.248.0.0 /13</option>
+                                          <option value="12">255.240.0.0 /12</option>
+                                          <option value="11">255.224.0.0 /11</option>
+                                          <option value="10">255.192.0.0 /10</option>
+                                          <option value="9">255.128.0.0 /9</option>
+                                          <option value="8">255.0.0.0 /8</option>
+                                       </select>
+                                    </div>
+                                    <div class="subnet-0 subnet-3 d-none">
+                                       <select id="csubnet" class="form-select" name="csubnet3" onchange="">
+                                          <option value="32">255.255.255.255 /32</option>
+                                          <option value="31">255.255.255.254 /31</option>
+                                          <option value="30">255.255.255.252 /30</option>
+                                          <option value="29">255.255.255.248 /29</option>
+                                          <option value="28">255.255.255.240 /28</option>
+                                          <option value="27">255.255.255.224 /27</option>
+                                          <option value="26">255.255.255.192 /26</option>
+                                          <option value="25">255.255.255.128 /25</option>
+                                          <option value="24">255.255.255.0 /24</option>
+                                          <option value="23">255.255.254.0 /23</option>
+                                          <option value="22">255.255.252.0 /22</option>
+                                          <option value="21">255.255.248.0 /21</option>
+                                          <option value="20">255.255.240.0 /20</option>
+                                          <option value="19">255.255.224.0 /19</option>
+                                          <option value="18">255.255.192.0 /18</option>
+                                          <option value="17">255.255.128.0 /17</option>
+                                          <option value="16">255.255.0.0 /16</option>
+                                       </select>
+                                    </div>
+                                    <div class="subnet-0 subnet-4 d-none">
+                                       <select id="csubnet" class="form-select" name="csubnet4" onchange="">
+                                          <option value="32">255.255.255.255 /32</option>
+                                          <option value="31">255.255.255.254 /31</option>
+                                          <option value="30">255.255.255.252 /30</option>
+                                          <option value="29">255.255.255.248 /29</option>
+                                          <option value="28">255.255.255.240 /28</option>
+                                          <option value="27">255.255.255.224 /27</option>
+                                          <option value="26">255.255.255.192 /26</option>
+                                          <option value="25">255.255.255.128 /25</option>
+                                          <option value="24">255.255.255.0 /24</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-lg-6 mb-4">
+                                    <strong class="d-block fw-medium mb-2">IP Address</strong>
+                                    <input id="cip" class="form-control" name="cip" type="text" value="27.78.101.154" />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center my-2">
+                           <button class="btn-primary-rounded-pill text-white px-5" type="submit">Hitung</button>
+                           <div class="ajax_loading loading_ajax_symbol mt-0" style="margin-left: -2.75rem;"><i class="fa fa-spinner text-white fa-spin fa-2x fa-fw"></i>
+                              <span class="sr-only">Loading...</span>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+
+            <div id="ipc-v4-show" class="targetDiv">
+               <div class="page-text3 kq-ip1-title d-none" style="margin-bottom:10px;">Subnet Details</div>
+               <div class="kq-ip1 d-none table-responsive"></div>
+            </div>
+            <script>
+               jQuery(function($){
+               $('[name="cclass"]').change(function(){
+               $('.subnet-0').addClass('d-none');
+               // $('.subnet-2').removeClass('d-none');
+               var v  = $(this).val();
+               switch (v) {
+               case "any":
+               $('.subnet-1').removeClass('d-none');
+               break;
+               case "a":
+               $('.subnet-2').removeClass('d-none');
+               break;
+               case "b":
+               $('.subnet-3').removeClass('d-none');
+               break;
+               case "c":
+               $('.subnet-4').removeClass('d-none');
+               break;
+               }
+               });
+               $('#form-ip').submit(function( e ) {
+               e.preventDefault();
+               var $this = $(this);
+               var  cclass = $(this).find('[name="cclass"]:checked').val();
+               var csubnet = "abc";
+               var cip = $(this).find('[name="cip"]').val();
+               switch ( cclass ) {
+               case 'any':
+               csubnet = $(this).find('[name="csubnet1"]').val();
+               break;
+               case "a":
+               csubnet = $(this).find('[name="csubnet2"]').val();
+               break;
+               case "b":
+               csubnet = $(this).find('[name="csubnet3"]').val();
+               break;
+               case "c":
+               csubnet = $(this).find('[name="csubnet4"]').val();
+               break;
+               }
+               $.ajax({
+               type : "post",
+               dataType : "json",
+               url : ajax_url_load_v4,
+               
+               //  url :  "https://www.calculator.net/ip-subnet-calculator.html?" + str + "&x=54&y=24"  ,
+               data: {
+               action: "ipv4",
+               //   data1:str,
+               cclass: cclass,
+               csubnet: csubnet ,
+               cip: cip,
+               },
+               context: this,
+               beforeSend: function(){
+               //  be_load_tphi();
+               $('.ajax_loading').removeClass('loading_ajax_symbol');
+               },
+               success: function(response) {
+               
+               if( response ) {
+               
+               
+               if ( response.data  ) {
+               $('.ajax_loading').addClass('loading_ajax_symbol');
+               $('.kq-ip1').removeClass('d-none');
+               $('.kq-ip1-title').removeClass('d-none');
+               $('.kq-ip1').html( response.data );
+               } else {
+               }
+               
+               // else responsve
+               } else {
+               
+               }
+               },
+               error: function( jqXHR, textStatus, errorThrown ){
+               
+               }
+               })
+               });
+               // console.log(ajax_object.ajax_url);
+               $('#form-ip2').submit(function( e ) {
+               e.preventDefault();
+               var $this = $(this);
+               var str = $( this ).serialize();
+               // alert( str );
+               var  c6subnet = $(this).find('[name="c6subnet"]').val();
+               var c6ip = $(this).find('[name="c6ip"]').val();
+               //  return ;
+               $.ajax({
+               type : "post",
+               dataType : "json",
+               url : ajax_url_load_v6,
+               //  url :  "https://www.calculator.net/ip-subnet-calculator.html?" + str + "&x=54&y=24"  ,
+               data: {
+               action: "ipv6",
+               //   data1:str,
+               c6subnet: c6subnet,
+               c6ip: c6ip,
+               },
+               context: this,
+               beforeSend: function(){
+               //  be_load_tphi();
+               $('.ajax_loading2').removeClass('loading_ajax_symbol2');
+               },
+               success: function(response) {
+               
+               if( response ) {
+               
+               if ( response.data  ) {
+               $('.ajax_loading2').addClass('loading_ajax_symbol2');
+               $('.kq-ip2').removeClass('d-none');
+               $('.kq-ip2-title').removeClass('d-none');
+               $('.kq-ip2').html( response.data );
+               } else {
+               }
+               
+               // else responsve
+               } else {
+               
+               }
+               },
+               error: function( jqXHR, textStatus, errorThrown ){
+               
+               }
+               })
+               });
+               });
+            </script>
+         </section>
+      </div>
+   </div>
+</div>
+
+</p></div>
+</div>
+<div id="ipv4-sec2" class="accordion-item targetDiv">
+<div id="use-ipv4-sec2" class="accordion-collapse collapse">
+<div class="accordion-body">
+<p><strong>A step-by-step guide to useAkuFerry’ IPv4 Subnet Calculator</strong></p>
+<p>Choose the preferred Network class, which is determined by its first bits, by clicking either three options:</p>
+<ul>
+<li>Class A (8 bits), B (16 bits) and C (24 bits)</li>
+<li>Select the target Subnet from the dropbox according to the Network class you chose</li>
+<li>Enter the IP address. An example IP address is already in place and can be used immediately</li>
+</ul>
+<p>Hit the Calculate button to view the result list of all the network and IP address values.</p>
+<p>The necessary data IPv4 Subnet Calculator needs to calculate:</p>
+<ul>
+<li><strong>Network class:</strong>Network is divided into Class A, Class B and Class C. Class A network uses the first 8 bits of the IP address as its “network part.”, while Class B uses the first 16 bits and Class C uses the first 24 bits</li>
+<li><strong>Subnet:</strong>Subnet includes two parts: The subnet mask, followed by the CIDR notation</li>
+<li><strong>IP address:</strong>IPv4 address uses a 32-bit address and can support 232 IP addresses. IPv4 has 4 groups of numbers – called octets. Each octet ranges between 0 and 255 and is separated by dots (.)</li>
+</ul></div>
+</p></div>
+</p></div>
+<div id="ipv4-sec3" class="accordion-item targetDiv">
+<div id="results-ipv4-sec3" class="accordion-collapse collapse">
+<div class="accordion-body">
+<p>IPv4 Subnet Calculator tool will use that information to calculate and display comprehensive information about:</p>
+<ul>
+<li><strong>Network Address:</strong>The first part of the subnet mask and is the same with the first part of the IP address.</li>
+<li><strong>Broadcast Address:</strong>The last address on the subnet. It is used to send data (broadcast) to every host on that subnet.</li>
+<li><strong>Total Number of Hosts:</strong>Total number of addresses available on the network.</li>
+<li><strong>Usable Host IP Range:</strong>It refers to the range of IP addresses that can be assigned to hosts. The range starts with the address right after the network address and ends at one address before the broadcast address.</li>
+<li><strong>Number of Usable Hosts:</strong>The addresses that can be assigned to hosts. The total number of addresses without the first address (the network address) and the last address (the broadcast address).</li>
+<li><strong>Wildcard Mask:</strong>Wildcard masks refers to the inverted bits of the subnet mask to be used with routing protocols (OSPF) and access control lists (ACLs).</li>
+<li><strong>Binary Subnet Mask:</strong>Subnet mask in binary format.</li>
+<li><strong>IP Class:</strong>IP addresses are categorized into five classes, ranging from Class A to E. Class D is for multicasting and Class E is for future use.</li>
+<li><strong>CIDR Notation:</strong>IP address is written with a number of bits (CIDR number), with a forward-slash (/) in between.</li>
+<li><strong>IP Type:</strong>Show whether the IP address is public (on the Internet) or private (local networks).</li>
+<li><strong>Binary ID:</strong>IP address in binary format, which consists of only 0s and 1s.</li>
+<li><strong>Integer ID:</strong>IP address in integer format, which consists of numbers from 0 – 9.</li>
+<li><strong>Hex ID:</strong>IP address in hexadecimal format, which starts with the “0x”, and consists of numbers from 0 – 9 and letters from A – F.</li>
+<li><strong>In-addr.arpa:</strong>A domain name for reverse DNS lookup. It is the IP addresses in the reverse order. For example, when looking up the IP address of 27.78.101.154, the returned result is 154.101.78.27.in-addr.arpa.</li>
+<li><strong>IPv4 Mapped Address:</strong>IPv4 Mapped Address is used to present a 32-bit IPv4 address as a 128-bit IPv6 address. Its format starts with 80 “0” bits, followed by 16 bits set in 1s (“FFFF” in hexadecimal), and ends with the original 32-bit IPv4 address written in hexadecimal format.</li>
+<li><strong>6to4 Prefix:</strong>6to4 is an IPv4 to IPv6 migration scheme. 6to4 addresses always start with 2002, followed by the original 32-bit IPv4 address written in hexadecimal format. IPv4 Subnet Calculator will also return the data about all the possible networks for that IP address (Network Address, Usable Host Range, Broadcast Address).</li>
+</ul></div>
+</p></div>
+</p></div>
+<div id="ipv6-sec3" class="accordion-item targetDiv d-none">
+<div class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#results-ipv6-sec3" aria-expanded="false" aria-controls="results-ipv6-sec3">Results</button></div>
+<div id="results-ipv6-sec3" class="accordion-collapse collapse">
+<div class="accordion-body">
+<ul>
+<li><strong>IP Address:</strong>It shows the IP address, followed by the prefix length. The IP address length is shortened, usually by omitting the 0s.</li>
+<li><strong>Full IP Address:</strong>The IPv6 address is written fully in 32-bits without shortening the length.</li>
+<li><strong>Total IP Addresses:</strong>Total number of usable host addresses available on that IPv6 network.</li>
+<li><strong>Total /64 Networks:</strong>Total number of /64 subnets on that network (in IPv6, the default subnet mask is /64).</li>
+<li><strong>Network:</strong>This represents the network address. It is the subnet mask’s first three sets of numbers (the first 48 bits) written in CIDR notation.</li>
+<li><strong>IP Range:</strong>the range of IPv6 addresses that can be assigned to hosts.</li>
+</ul></div>
+</p></div>
+</p></div>
+<div class="accordion-item">
+<div id="subneting" class="accordion-collapse collapse">
+<div class="accordion-body">
+<p>A subnet, or a subnetwork, is a subdivision of an IP network. Subnets are formed when a network is divided into two or more linked networks.</p>
+<p>Subnetting is the act of creating subnets. Subnetting is used to minimize traffic and improve network speeds. Network speeds will be boosted when separating a big network into numerous smaller networks, thus lowering the number of paths required to locate a single device.</p>
+<p>Devices also have a subnet mask, which defines whatever IP address part belongs to the network or the device. To connect to other networks, a gateway is needed. When a device communicates with another device on a different network, the information is routed to the gateway and then to its final destination.</p>
+<p>The Internet Protocol (IP) is a data-transfer protocol that allows devices to communicate over the Internet. IPv4 is a 32-bit address, whereas IPv6 is 128-bit. Each device has its IP address, which is drawn from the IPv4 or IPv6 pool, and consists of two parts: the host (the client) and the network (the server).</p>
+<p>The network part identifies a specific network and the host part identifies the node (a device). CIDR (Classless Inter-Domain Routing) assigns networks and devices unique IDs. The network address is the same for all hosts in a subnetwork, whereas the host address is unique.</p>
+<p>A block of IP addresses is represented by CIDR (Classless Inter-Domain Routing). A CIDR IP address is similar to a regular IP address, except that it ends with a slash and a number, called the IP network prefix.</p>
+<p>Subnetwork has three most commonly used classes, which are Class A, B, and C. Each class relates to a specific range of IP addresses and has a default subnet mask.</p>
+<p>The below table provides information about the IPv4 subnet:</p>
+<div class="row row-cols-1 row-cols-md-2 gx-4 gy-2">
+<div class="col">
+<div class="text-primary table-title-1">Class A</div>
+<table class="table table-sm d-none d-md-table">
+<thead>
+<tr>
+<th scope="col">Prefix size/<br />CIDR Notation</th>
+<th scope="col">Network mask</th>
+<th scope="col">Usable Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td>128.0.0.0</td>
+<td>2,147,483,646</td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td>192.0.0.0</td>
+<td>1,073,741,822</td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td>224.0.0.0</td>
+<td>536,870,910</td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td>240.0.0.0</td>
+<td>268,435,454</td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td>248.0.0.0</td>
+<td>134,217,726</td>
+</tr>
+<tr>
+<th scope="row">6</th>
+<td>252.0.0.0</td>
+<td>67,108,862</td>
+</tr>
+<tr>
+<th scope="row">7</th>
+<td>254.0.0.0</td>
+<td>33,554,430</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-sm d-md-none">
+<thead>
+<tr>
+<th scope="col">Prefix size/<br />CIDR Notation</th>
+<th scope="col">Network mask</th>
+<th scope="col">Usable Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td>128.0.0.0</td>
+<td>2,147,483,646</td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td>192.0.0.0</td>
+<td>1,073,741,822</td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td>224.0.0.0</td>
+<td>536,870,910</td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td>240.0.0.0</td>
+<td>268,435,454</td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td>248.0.0.0</td>
+<td>134,217,726</td>
+</tr>
+<tr>
+<th scope="row">6</th>
+<td>252.0.0.0</td>
+<td>67,108,862</td>
+</tr>
+<tr>
+<th scope="row">7</th>
+<td>254.0.0.0</td>
+<td>33,554,430</td>
+</tr>
+<tr>
+<th scope="row">8</th>
+<td>255.0.0.0</td>
+<td>16,777,214</td>
+</tr>
+<tr>
+<th scope="row">9</th>
+<td>255.128.0.0</td>
+<td>8,388,606</td>
+</tr>
+<tr>
+<th scope="row">10</th>
+<td>255.192.0.0</td>
+<td>4,194,302</td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td>255.224.0.0</td>
+<td>2,097,150</td>
+</tr>
+<tr>
+<th scope="row">12</th>
+<td>255.240.0.0</td>
+<td>1,048,574</td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td>255.248.0.0</td>
+<td>524,286</td>
+</tr>
+<tr>
+<th scope="row">14</th>
+<td>255.252.0.0</td>
+<td>262,142</td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td>255.254.0.0</td>
+<td>131,070</td>
+</tr>
+</tbody>
+</table></div>
+<div class="col">
+<div class="text-primary table-title-1 d-none d-md-block">Class A</div>
+<table class="table table-sm d-none d-md-table">
+<thead>
+<tr>
+<th scope="col">Prefix size/<br />CIDR Notation</th>
+<th scope="col">Network mask</th>
+<th scope="col">Usable Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">8</th>
+<td>255.0.0.0</td>
+<td>16,777,214</td>
+</tr>
+<tr>
+<th scope="row">9</th>
+<td>255.128.0.0</td>
+<td>8,388,606</td>
+</tr>
+<tr>
+<th scope="row">10</th>
+<td>255.192.0.0</td>
+<td>4,194,302</td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td>255.224.0.0</td>
+<td>2,097,150</td>
+</tr>
+<tr>
+<th scope="row">12</th>
+<td>255.240.0.0</td>
+<td>1,048,574</td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td>255.248.0.0</td>
+<td>524,286</td>
+</tr>
+<tr>
+<th scope="row">14</th>
+<td>255.252.0.0</td>
+<td>262,142</td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td>255.254.0.0</td>
+<td>131,070</td>
+</tr>
+</tbody>
+</table></div>
+<div class="col">
+<div class="text-primary table-title-1">Class B</div>
+<table class="table table-sm">
+<thead>
+<tr>
+<th scope="col">Prefix size/<br />CIDR Notation</th>
+<th scope="col">Network mask</th>
+<th scope="col">Usable Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">16</th>
+<td>255.255.0.0</td>
+<td>65,534</td>
+</tr>
+<tr>
+<th scope="row">17</th>
+<td>255.255.128.0</td>
+<td>32,766</td>
+</tr>
+<tr>
+<th scope="row">18</th>
+<td>255.255.192.0</td>
+<td>16,382</td>
+</tr>
+<tr>
+<th scope="row">19</th>
+<td>255.255.224.0</td>
+<td>8,190</td>
+</tr>
+<tr>
+<th scope="row">20</th>
+<td>255.255.240.0</td>
+<td>4,094</td>
+</tr>
+<tr>
+<th scope="row">21</th>
+<td>255.255.248.0</td>
+<td>2,046</td>
+</tr>
+<tr>
+<th scope="row">22</th>
+<td>255.255.252.0</td>
+<td>1,022</td>
+</tr>
+<tr>
+<th scope="row">23</th>
+<td>255.255.254.0</td>
+<td>510</td>
+</tr>
+</tbody>
+</table></div>
+<div class="col">
+<div class="text-primary table-title-1">Class C</div>
+<table class="table table-sm">
+<thead>
+<tr>
+<th scope="col">Prefix size/<br />CIDR Notation</th>
+<th scope="col">Network mask</th>
+<th scope="col">Usable Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">24</th>
+<td>255.255.255.0</td>
+<td>254</td>
+</tr>
+<tr>
+<th scope="row">25</th>
+<td>255.255.255.128</td>
+<td>126</td>
+</tr>
+<tr>
+<th scope="row">26</th>
+<td>255.255.255.192</td>
+<td>62</td>
+</tr>
+<tr>
+<th scope="row">27</th>
+<td>255.255.255.224</td>
+<td>30</td>
+</tr>
+<tr>
+<th scope="row">28</th>
+<td>255.255.255.240</td>
+<td>14</td>
+</tr>
+<tr>
+<th scope="row">29</th>
+<td>255.255.255.248</td>
+<td>6</td>
+</tr>
+<tr>
+<th scope="row">30</th>
+<td>255.255.255.252</td>
+<td>2</td>
+</tr>
+<tr>
+<th scope="row">31</th>
+<td>255.255.255.254</td>
+<td>0</td>
+</tr>
+<tr>
+<th scope="row">32</th>
+<td>255.255.255.255</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+</p></div>
+
+<div class="section section-banner">
+    <div class="inner text-center">
+            <div class="subtitle"><span>Request a quote</span></div>
+                <h2>Ready to Get Started?</h2>
+                <p>Our Specialists Will Reach Out Soon</p>
+                <p class="pt-3 mb-0">
+            <a href="/request-a-quote/?post=280" class="btn-primary-rounded-pill d-inline-block">Request a quote</a>
+        </p>
+        </div>
+</div>
+
+
+<script>
+   // Function to show/hide divs based on the clicked button
+   function toggleDivs(button) {
+        var targetDivIds = button.getAttribute('data-target').split(' ');
+
+        // Hide all target divs initially
+        var targetDivs = document.querySelectorAll('.targetDiv');
+        targetDivs.forEach(function(div) {
+            div.classList.add('d-none');
+        });
+
+        // Show the selected target divs
+        targetDivIds.forEach(function(targetId) {
+            var selectedDiv = document.getElementById(targetId);
+            selectedDiv.classList.remove('d-none');
+        });
+    }
+
+    // Add click event listener to the buttons
+    var showDivButtons = document.querySelectorAll('.showDivButton');
+    showDivButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            toggleDivs(button);
+        });
+    });
+</script>
+
+</body>
+</html>
